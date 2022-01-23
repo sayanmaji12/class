@@ -13,10 +13,13 @@
             <input type="text" class="from-control" [(ngModel)]="arr">
         </div>
         <button class="btn btn-primary mt-2" (click)="goTo()">Go to</button>
-
+        <div class="col-sm-12 mt-1">
+          <!-- <span [ngClass]="{'bg-dark':email!='','bg-primary':email==''}" >Hello</span> -->
+          <span [ngStyle]="{'font-size':email!==''?'15px':'20px'}" >Change style</span>
+      </div>
         <div class="col-sm-12">
             <table class="table">
-                <thead>
+                <thead> 
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Logo</th>
