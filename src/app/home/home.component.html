@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>{{new}}</h1>
+        </div>
+        <div class="col-sm-12">
+            <input type="text" class="from-control" [(ngModel)]="new">
+        </div>
+        <div class="col-sm-12 mt-1">
+            <input type="text" class="from-control" [(ngModel)]="email">
+        </div>
+        <div class="col-sm-12 mt-1">
+            <input type="text" class="from-control" [(ngModel)]="arr">
+        </div>
+        <button class="btn btn-primary mt-2" (click)="goTo()">Go to</button>
+
+        <div class="col-sm-12">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Logo</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let res of listUsers;let i = index;">
+                      <td>{{i+1}}</td>
+                      <td><img src={{res.avatar}} width="50" style="border-radius: 100%;"></td>
+                      <td>{{res.first_name+' '+res.last_name}}</td>
+                      <td>{{res.email}}</td>
+                    <!-- <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td> -->
+                  </tr>
+                  
+                </tbody>
+              </table>
+        </div>
+    </div> 
+</div>
