@@ -11,7 +11,8 @@ export class HomeComponent implements OnInit {
   arr = '' as any;
   email = '';
   listUsers = [] as any;
-  constructor(private rou: Router,private rest:RestApiService) { }
+  fileName = '';
+  constructor(private rou: Router,public rest:RestApiService) { }
 
   ngOnInit(): void {
     this.getUsers();
@@ -42,7 +43,28 @@ export class HomeComponent implements OnInit {
       console.log(response.name)
     })
   }
-  
+  showUpload(){
+    const image= document.getElementById('file') as HTMLInputElement;
+    image.click();
+  }
 
+  uploadImg(){
+    console.log(".......")
+    const image= document.getElementById('file') as HTMLInputElement;
+    const file = image.files;
+    console.log(file)
+    if(file){
+      // const reader = new FileReader();
+      // reader.readAsDataURL(file[0])
+      const fileData = new FormData();
+      fileData.append('file',file[0])
+      this.rest.upload(fileData).subscribe((res:any)=>{
+        if(res.success){
+          this.fileName=res.fileName
+        }
+      })
+    }
+
+  }
 
 }

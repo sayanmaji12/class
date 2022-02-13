@@ -17,6 +17,11 @@
           <!-- <span [ngClass]="{'bg-dark':email!='','bg-primary':email==''}" >Hello</span> -->
           <span [ngStyle]="{'font-size':email!==''?'15px':'20px'}" >Change style</span>
       </div>
+      <div class="col-sm-12 mt-5 mb-5">
+        <input type="file" id="file" (change)="uploadImg()" style="display: none;" accept="image/jpg,image/jpeg">
+        <button class="btn btn-primary" (click)="showUpload()">Upload</button>
+        <span *ngIf="fileName"><img [src]="this.rest.imageUrl+fileName"></span>
+      </div>
         <div class="col-sm-12">
             <table class="table">
                 <thead> 
