@@ -1,0 +1,68 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>Add User</h1>
+            <div >
+                <label>User Name</label>
+                <input type="text" class="form-control" [(ngModel)]="username">
+            </div>
+            <div >
+                <label>Email</label>
+                <input type="text" class="form-control" [(ngModel)]="email">
+            </div>
+            <div >
+                <label>Password</label>
+                <input type="text" class="form-control" [(ngModel)]="password">
+            </div>
+            <div >
+                <label>User Type</label>
+                <select class="form-control" [(ngModel)]="userType">
+                    <option value="">Select</option>
+                    <option value="user">User</option>
+                </select>
+            </div>
+            <div >
+                <mat-form-field >
+                    <mat-label>Roles</mat-label>
+                    <mat-select [(ngModel)]="roles" multiple>
+                      <mat-select-trigger>
+                        {{roles}}
+                      </mat-select-trigger>
+                      <mat-option *ngFor="let topping of roleList" [value]="topping.role_id">{{topping.role_name}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">User Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">User Type</th>
+                <th scope="col">Roles</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of allUser;let i =index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{user.username}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.userType}}</td>
+                <td >
+                    <span *ngFor="let role of user.roles">
+                        {{role.role_name}},
+                    </span>
+                   
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+    </div>
+</div>

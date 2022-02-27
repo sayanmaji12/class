@@ -15,12 +15,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { NavComponent } from './nav/nav.component';
+import { AdduserComponent } from './adduser/adduser.component';
+import {MatSelectModule} from '@angular/material/select';
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     DashboardComponent,
-    NavComponent
+    NavComponent,
+    AdduserComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +36,8 @@ import { NavComponent } from './nav/nav.component';
     MatCheckboxModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AdminModule
+    AdminModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

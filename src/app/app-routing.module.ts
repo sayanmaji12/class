@@ -3,10 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AdduserComponent } from './adduser/adduser.component';
+
 const routes: Routes = [
   {
     path: "",
     component: HomeComponent
+  },{
+    path: "adduser",
+    component: AdduserComponent
   },{
     path: "home",
     component: NavComponent,

@@ -19,4 +19,13 @@ export class RestApiService {
   upload(data:any):any{
     return this.http.post(this.Api_root+'upload',data)
   }
+  allRoles(data:any):any{
+    return this.http.post(this.Api_root+'allRoles',JSON.stringify(data),httpOptions)
+  }
+  addUser(data:any):any{
+    return this.http.post(this.Api_root+'addUser',JSON.stringify(data),httpOptions)
+  }
+  allUsers(data:any):any{
+    return this.http.post(this.Api_root+'allUsers',JSON.stringify(data),httpOptions)
+  }
 }
