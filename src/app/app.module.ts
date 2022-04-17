@@ -17,14 +17,15 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { NavComponent } from './nav/nav.component';
 import { AdduserComponent } from './adduser/adduser.component';
 import {MatSelectModule} from '@angular/material/select';
-
+import {ExponentialStrengthPipe}  from './common.service'
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     DashboardComponent,
     NavComponent,
-    AdduserComponent
+    AdduserComponent,
+    ExponentialStrengthPipe
   ],
   imports: [
     BrowserModule,

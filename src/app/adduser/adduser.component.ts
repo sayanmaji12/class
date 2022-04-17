@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {RestApiService} from '../rest-api.service'
+import {RestApiService} from '../rest-api.service';
 @Component({
   selector: 'app-adduser',
   templateUrl: './adduser.component.html',
@@ -28,6 +28,7 @@ export class AdduserComponent implements OnInit {
       console.log( this.roleList)
     })
   }
+ 
   onSubmit():any{
     var tempArr=[] as any;
     for(let role of this.roles){
